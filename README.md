@@ -19,7 +19,7 @@ Receives an input object via post, validates it and returns
 a stub output if the validation is correct. If the validation 
 fails, it returns a json object
 
-```json
+```javascript
 {
   'valid': true,
   'description': 'A string describing the error'
