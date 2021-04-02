@@ -24,8 +24,9 @@ def simulator():
         val = pupin_output()
         val['valid'] = True
         val['description'] = 'Ok'
+        return jsonify(val)
     else:
-        return res
+        return jsonify(res)
 
 
 @app.route('/output', methods=['GET'])
