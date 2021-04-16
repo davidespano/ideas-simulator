@@ -5,6 +5,7 @@ Repository for testing calls to the IDEAS simulator
 Clone or download the repository and run 
 
     pip install flask
+    pip install flask-cors
 
 for running the test you will be needing also pytest
 

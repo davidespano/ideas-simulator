@@ -1,5 +1,7 @@
 import flask
 from flask import request, jsonify
+from flask_cors import cross_origin
+
 from sample_objects import *
 from input_object import *
 from output_object import *
@@ -11,12 +13,14 @@ def create_app():
     app.config["DEBUG"] = True
 
     @app.route('/', methods=['GET'])
+    @cross_origin()
     def home():
         input_object = pupin_input()
         res = validate_input(input_object)
         return jsonify(res)
 
     @app.route('/simulator', methods=['POST'])
+    @cross_origin()
     def simulator():
         content = request.json
         res = validate_input(content)
@@ -29,6 +33,7 @@ def create_app():
             return jsonify(res)
 
     @app.route('/output', methods=['GET'])
+    @cross_origin()
     def test_output():
         input_object = pupin_output()
         res = validate_output(input_object)
@@ -46,4 +51,4 @@ def create_app():
     return app
 
 
-#create_app().run()
+
