@@ -1,4 +1,5 @@
 import flask
+import requests
 from flask import request, jsonify
 from flask_cors import cross_origin
 
@@ -44,10 +45,16 @@ def create_app():
         return check_field(output_object, template, "")
 
     def validate_input(input_object):
-
         template = template_input()
         return check_field(input_object, template, "")
 
+    @app.route('/elevation', methods=['GET'])
+    def get_elevation():
+        url = "https://api.open-elevation.com/api/v1/lookup"
+        lat = request.args.get('lat')
+        lon = request.args.get('lon')
+        payload = {'locations': str(lat) + ',' + str(lon)}
+        return requests.get(url, params=payload)
     return app
 
 

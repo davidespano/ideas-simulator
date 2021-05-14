@@ -30,3 +30,14 @@ class TestSuite:
         output_object = response.json
         print(response.json)
         assert output_object['description'] == 'Ok'
+
+    def test_elevation(self):
+        payload = {"lat": 41.161758, "lon": -8.583933}
+        response = self.client.get(
+            "/elevation",
+            json=jsonify(payload).get_json(),
+            headers={"Content-Type": "application/json"},
+        )
+
+        assert response.status_code == 200
+        assert response.json["results"]["elevation"] == 117
