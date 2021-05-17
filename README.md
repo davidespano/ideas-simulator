@@ -6,6 +6,7 @@ Clone or download the repository and run
 
     pip install flask
     pip install flask-cors
+    pip install requests
 
 for running the test you will be needing also pytest
 
