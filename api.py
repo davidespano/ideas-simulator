@@ -49,12 +49,25 @@ def create_app():
         return check_field(input_object, template, "")
 
     @app.route('/elevation', methods=['GET'])
+    @cross_origin(origin='localhost',allow_headers=['Content-Type','Authorization','Access-Control-Allow-Origin','Accept'])
     def get_elevation():
-        url = "https://api.open-elevation.com/api/v1/lookup"
+        url = "https://api.opentopodata.org/v1/test-dataset"
         lat = request.args.get('lat')
         lon = request.args.get('lon')
         payload = {'locations': str(lat) + ',' + str(lon)}
-        return requests.get(url, params=payload)
+        return str(requests.get(url, params=payload, headers={'Content-Type': 'application/json','Access-Control-Allow-Origin': '*', 'Accept':'application/json'}).content)
+
+    @app.route('/countryCode', methods=['GET'])
+    @cross_origin(origin='localhost',allow_headers=['Content-Type','Authorization','Access-Control-Allow-Origin'])
+    def get_country_code():
+        url = "http://api.timezonedb.com/v2.1/get-time-zone?key=4LKS6TLZTRJW&format=json&by=position"
+        lat = request.args.get('lat')
+        lon = request.args.get('lon')
+        payload = {'lat': lat , 'lng' : lon}
+        r = requests.get(url, params=payload, headers={'Access-Control-Allow-Origin': '*', "Content-Type": "application/json"})
+        print(r.url)
+        return str(requests.get(url, params=payload, headers={'Access-Control-Allow-Origin': '*'}).content)
+    return app
     return app
 
 
