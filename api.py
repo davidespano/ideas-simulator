@@ -51,7 +51,7 @@ def create_app():
     @app.route('/elevation', methods=['GET'])
     @cross_origin(origin='localhost',allow_headers=['Content-Type','Authorization','Access-Control-Allow-Origin','Accept'])
     def get_elevation():
-        url = "https://api.opentopodata.org/v1/test-dataset"
+        url = "https://api.opentopodata.org/v1/eudem25m"
         lat = request.args.get('lat')
         lon = request.args.get('lon')
         payload = {'locations': str(lat) + ',' + str(lon)}
