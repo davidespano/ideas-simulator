@@ -430,6 +430,138 @@ def pupin_output():
         "configurations": [
             {
                 "input": {
+                    "id": 0,
+                    "num_pv_panels": 0,
+                    "num_inverters": 0,
+                    "num_stc_panels": 0,
+                    "yearly_maintenance_cost_ratio": 0.02,
+                    "additional_yearly_costs": 0.0,
+                    "cost_reduction": None
+                },
+                "output": {
+                    "note": "MOCK_RESULT_OBJECT",
+                    "rank": 4,
+                    "net_preference_flow": 0.124435,
+                    "criteria": {
+                        "op_cost": 75.59080496071823,
+                        "co2": 489.4703039486395,
+                        "res_share": 0.0
+                    },
+                    "system_sizing": {
+                        "pv_power_el": 8.91246199071993,
+                        "stc_power_th": 1.698618098685175,
+                        "ahx_power_th": 3.5709592084512867,
+                        "ghx_power_th": 7.854834340972456,
+                        "bf1_capacity": 6.046393697096622,
+                        "bf2_capacity": 1.6739636892417464,
+                        "bf3_capacity": 3.5510721504532183
+                    },
+                    "output_variables": None
+                }
+            },
+            {
+                "input": {
+                    "id": 1,
+                    "num_pv_panels": 4,
+                    "num_inverters": 1,
+                    "num_stc_panels": 2,
+                    "yearly_maintenance_cost_ratio": 0.02,
+                    "additional_yearly_costs": 0.0,
+                    "cost_reduction": None
+                },
+                "output": {
+                    "note": "MOCK_RESULT_OBJECT",
+                    "rank": 3,
+                    "net_preference_flow": 0.47272733788037513,
+                    "criteria": {
+                        "op_cost": 375.59080496071823,
+                        "co2": 355.4703039486395,
+                        "res_share": 0.9707178160937351
+                    },
+                    "system_sizing": {
+                        "pv_power_el": 8.91246199071993,
+                        "stc_power_th": 1.698618098685175,
+                        "ahx_power_th": 3.5709592084512867,
+                        "ghx_power_th": 7.854834340972456,
+                        "bf1_capacity": 6.046393697096622,
+                        "bf2_capacity": 1.6739636892417464,
+                        "bf3_capacity": 3.5510721504532183
+                    },
+                    "output_variables": None
+                }
+            },
+            {
+                "input": {
+                    "id": 2,
+                    "num_pv_panels": 6,
+                    "num_inverters": 1,
+                    "num_stc_panels": 3,
+                    "yearly_maintenance_cost_ratio": 0.02,
+                    "additional_yearly_costs": 0.0,
+                    "cost_reduction": None
+                },
+                "output": {
+                    "note": "MOCK_RESULT_OBJECT",
+                    "rank": 2,
+                    "net_preference_flow": 0.5528986983082608,
+                    "criteria": {
+                        "op_cost": 220.44697883642073,
+                        "co2": 325.1418217709819,
+                        "res_share": 0.8053671537964653
+                    },
+                    "system_sizing": {
+                        "pv_power_el": 0.43778186471644553,
+                        "stc_power_th": 8.327858668078326,
+                        "ahx_power_th": 2.4327961036551593,
+                        "ghx_power_th": 0.9578221158962053,
+                        "bf1_capacity": 9.341478946895567,
+                        "bf2_capacity": 9.160613636822518,
+                        "bf3_capacity": 5.133105963467503
+                    },
+                    "output_variables": None
+                }
+            },
+            {
+                "input": {
+                    "id": 3,
+                    "num_pv_panels": 10,
+                    "num_inverters": 2,
+                    "num_stc_panels": 4,
+                    "yearly_maintenance_cost_ratio": 0.02,
+                    "additional_yearly_costs": 0.0,
+                    "cost_reduction": None
+                },
+                "output": {
+                    "note": "MOCK_RESULT_OBJECT",
+                    "rank": 1,
+                    "net_preference_flow": 0.9469356324911006,
+                    "criteria": {
+                        "op_cost": 319.07268186926893,
+                        "co2": 280.3278015357672,
+                        "res_share": 0.4454151438437046
+                    },
+                    "system_sizing": {
+                        "pv_power_el": 1.2202461317928692,
+                        "stc_power_th": 8.799773197706834,
+                        "ahx_power_th": 0.6466319898645168,
+                        "ghx_power_th": 9.341510489010101,
+                        "bf1_capacity": 0.890818260841798,
+                        "bf2_capacity": 6.585093531313246,
+                        "bf3_capacity": 1.1346592809762046
+                    },
+                    "output_variables": None
+                }
+            }
+        ]
+    }
+
+
+def pupin_output_orig():
+    return {
+        "id": 1614248880980072,
+        "configurations": [
+            {
+                "input": {
                     "id": 1,
                     "num_pv_panels": 4,
                     "num_inverters": 1,

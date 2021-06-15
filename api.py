@@ -68,7 +68,7 @@ def create_app():
         print(r.url)
         return str(requests.get(url, params=payload, headers={'Access-Control-Allow-Origin': '*'}).content)
     return app
-    return app
+
 
 
 
